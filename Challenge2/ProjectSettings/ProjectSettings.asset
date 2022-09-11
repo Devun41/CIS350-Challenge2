@@ -634,10 +634,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: d59af935-58f5-4bde-aefa-f1f8dd85e773
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Challenge2
+  organizationId: dschneider_unity499
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
