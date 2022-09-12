@@ -4,29 +4,56 @@ using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
+
     public GameObject[] ballPrefabs;
 
     private float spawnLimitXLeft = -22;
     private float spawnLimitXRight = 7;
     private float spawnPosY = 30;
 
-    private float startDelay = 1.0f;
-    private float spawnInterval = 4.0f;
 
+    private float spawnInterval = 5.0f;
+
+    public HealthSystem healthSystem;
+    public DetectCollisionsX winManager;
+    // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+           // SpawnRandomBall();
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
+        //get a reference to the health system script
+        healthSystem = GameObject.FindGameObjectWithTag("HealthSystem").GetComponent<HealthSystem>();
+        winManager = GameObject.FindGameObjectWithTag("WinManager").GetComponent<DetectCollisionsX>();
+        StartCoroutine(SpawnRandomBallWithCoroutine());
+
     }
-
-    // Spawn random ball at random x position at top of play area
-    void SpawnRandomBall ()
+    IEnumerator SpawnRandomBallWithCoroutine()
     {
-        // Generate random ball index and random spawn position
+        yield return new WaitForSeconds(3f);
+        while (!healthSystem.gameOver && !winManager.win)
+        {
+            SpawnRandomBall();
+            //spawn ball every 3-5 sec
+            float randomDelay = Random.Range(3f, spawnInterval);
+            
+            yield return new WaitForSeconds(randomDelay);
+        }
+    }
+    // Spawn random ball at random x position at top of play area
+    void SpawnRandomBall()
+    {
+        //pick a random spawn point
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
-
-        // instantiate ball at random spawn location
-        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[0].transform.rotation);
+        //generate spawn pos
+        int prefabIndex = Random.Range(0, ballPrefabs.Length);
+        //spawn
+        Instantiate(ballPrefabs[prefabIndex], spawnPos, ballPrefabs[prefabIndex].transform.rotation);
     }
 
 }
