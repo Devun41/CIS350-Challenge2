@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ Devun Schneider
+ Challenge 2
+ Controls the destruction of game objects (balls and dogs)
+ 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

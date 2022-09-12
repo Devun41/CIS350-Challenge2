@@ -2,7 +2,7 @@
 /*
  Devun Schneider
  Challenge 2
- Controls the display of the hearts
+ Controls the display of the hearts and player health
  
  */
 using System.Collections;

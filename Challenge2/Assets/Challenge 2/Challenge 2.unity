@@ -306,52 +306,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 15.882001, y: -16.490002, z: -25.095001}
---- !u!1 &177052166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 177052167}
-  - component: {fileID: 177052168}
-  m_Layer: 0
-  m_Name: WinManager
-  m_TagString: WinManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &177052167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177052166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.834402, y: 11.055086, z: -25.523674}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &177052168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177052166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f880a64e2c84b0a8be42be264f9bad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreTrack: 0
-  win: 0
-  winText: {fileID: 864666238}
 --- !u!1 &202628026
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +544,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dogPrefab: {fileID: 8241448880393145375, guid: 3e5fe95e580114a5f8f8348678e77463,
     type: 3}
+  healthSystem: {fileID: 0}
+  coolDownTime: 0
+  coolDown: 0
 --- !u!4 &355618745
 Transform:
   m_ObjectHideFlags: 0
@@ -1158,7 +1115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &864666237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1175,8 +1132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 24.253}
-  m_SizeDelta: {x: 252.9401, y: 48.505035}
+  m_AnchoredPosition: {x: 29.9, y: 9}
+  m_SizeDelta: {x: 354.97006, y: 103.04936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &864666238
 MonoBehaviour:
@@ -1209,7 +1166,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'You Win!
+
+    Press R to Restart!'
 --- !u!222 &864666239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1401,7 +1360,6 @@ MonoBehaviour:
   - {fileID: 4524317531697499709, guid: a325bcb65fd94414191d0ddc2514e2dc, type: 3}
   - {fileID: 7945815000853930370, guid: fc41e6839a5494e0cbaea5f0081c271d, type: 3}
   healthSystem: {fileID: 0}
-  winManager: {fileID: 0}
 --- !u!1 &1025854373
 GameObject:
   m_ObjectHideFlags: 0

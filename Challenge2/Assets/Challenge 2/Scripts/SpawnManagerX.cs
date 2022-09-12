@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ Devun Schneider
+ Challenge 2
+ Controls the spawning of balls
+ 
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +21,7 @@ public class SpawnManagerX : MonoBehaviour
     private float spawnInterval = 5.0f;
 
     public HealthSystem healthSystem;
-    public DetectCollisionsX winManager;
+   
     // Update is called once per frame
     private void Update()
     {
@@ -29,14 +35,14 @@ public class SpawnManagerX : MonoBehaviour
     {
         //get a reference to the health system script
         healthSystem = GameObject.FindGameObjectWithTag("HealthSystem").GetComponent<HealthSystem>();
-        winManager = GameObject.FindGameObjectWithTag("WinManager").GetComponent<DetectCollisionsX>();
+        
         StartCoroutine(SpawnRandomBallWithCoroutine());
 
     }
     IEnumerator SpawnRandomBallWithCoroutine()
     {
         yield return new WaitForSeconds(3f);
-        while (!healthSystem.gameOver && !winManager.win)
+        while (!healthSystem.gameOver )
         {
             SpawnRandomBall();
             //spawn ball every 3-5 sec
